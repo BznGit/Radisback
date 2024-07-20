@@ -3,7 +3,9 @@ const router = express.Router();
 const authenticate = require('../middleware/authenticate');
 const authController = require('../controller/auth');
 const profileController = require('../controller/profile');
+const session = require('../middleware/session')
 
+router.use(session)
 router.post('/login', authController.login);
 
 // all routes that come after this middleware are protected

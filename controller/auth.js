@@ -11,7 +11,10 @@ async function login(req, res) {
     }
 
     try {
+        console.log('email, password', email, password)
         const user = await authService.login(email, password);
+        console.log('user> ', user)
+        console.log('user> ', req.session )
         req.session.user = user;
         res.sendStatus(204);
     } catch(err) {
