@@ -3,9 +3,9 @@ const router = express.Router();
 const authenticate = require('../middleware/authenticate');
 const authController = require('../controller/auth');
 const profileController = require('../controller/profile');
+const logoutcontroller = require('../controller/logout');
 const session = require('../middleware/session')
 
-router.use(session)
 router.post('/login', authController.login);
 
 // all routes that come after this middleware are protected
@@ -13,5 +13,6 @@ router.post('/login', authController.login);
 router.use(authenticate);
 
 router.get('/profile', profileController.profile);
+router.get('/logout', logoutcontroller.logout);
 
 module.exports = router;

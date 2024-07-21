@@ -8,11 +8,11 @@ app.use(express.json());
 // if you run behind a proxy (e.g. nginx)
 // app.set('trust proxy', 1);
 
-// setup CORS logic
-///app.options("*", corsMw);
-//app.use(corsMw);
+//setup CORS logic
+app.options("*", corsMw);
+app.use(corsMw);
 
-//app.use(session);
+app.use(session);
 app.use(router);
 
 app.use(express.static('./dist')); 
