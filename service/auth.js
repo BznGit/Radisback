@@ -3,17 +3,21 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const User = require('../db/models/user');
 console.log('mongoseee')
+
 const user = new User({
     _id: new mongoose.Types.ObjectId(),
     login:'alex',
-    password: 'ededede'
+    password: '111'
 })
 
 user.save()
 
+
+
 async function login(email, password) {
     try {
-        const user = await userDAO.findUserByEmail(email);
+        const {login, password } = await User.findOne({login: 'alex' })
+        console.log(login, password )
 
         // we do not need to hash our plain text password
         // before we pass it to bcrypt.compare
