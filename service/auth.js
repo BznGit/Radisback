@@ -1,5 +1,15 @@
 const userDAO = require('../dao/user');
 const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const User = require('../db/models/user');
+console.log('mongoseee')
+const user = new User({
+    _id: new mongoose.Types.ObjectId(),
+    login:'alex',
+    password: 'ededede'
+})
+
+user.save()
 
 async function login(email, password) {
     try {
@@ -20,5 +30,7 @@ async function login(email, password) {
         return Promise.reject('user not found');
     }
 }
+
+
 
 module.exports = {login};

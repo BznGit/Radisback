@@ -2,7 +2,7 @@ const express = require("express");
 const router = require("./routes");
 const session = require("./middleware/session");
 const corsMw = require("./middleware/cors");
-
+const mgb = require('./db/mongo')
 const app = express();
 app.use(express.json());
 // if you run behind a proxy (e.g. nginx)
