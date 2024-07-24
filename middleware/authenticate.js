@@ -1,5 +1,5 @@
 function authenticate(req, res, next) {
-    console.log(req.path)
+    console.log('session: ', req.session.user)
     if(req.path =! '/'){
         if (!req.session || !req.session.user) {
         const err = new Error('You shall not pass');
