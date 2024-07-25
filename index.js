@@ -4,6 +4,10 @@ const session = require("./middleware/session");
 const corsMw = require("./middleware/cors");
 const mgb = require('./db/mongo')
 const app = express();
+
+const  btcService = require("./service/btc");
+btcService.setExchangeformApi()
+
 app.use(express.json());
 // if you run behind a proxy (e.g. nginx)
 // app.set('trust proxy', 1);

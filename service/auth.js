@@ -1,4 +1,3 @@
-const userDAO = require('../dao/user');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const User = require('../db/models/user');
