@@ -1,6 +1,6 @@
 const exchangeService = require('../service/btc');
 
-async function getChart(req, res) {
+async function getBtcCharts(req, res) {
     try {
         const chart = await exchangeService.getChart();
         res.status(200);
@@ -12,5 +12,5 @@ async function getChart(req, res) {
 }
 
 module.exports = {
-    getChart
+    getBtcCharts
 };
